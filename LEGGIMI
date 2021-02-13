@@ -1,0 +1,32 @@
+Questo mio fork ha due repo:
+
+bozzo@MacBook-Pro:grav> git remote -v
+origin	https://github.com/bozzochet/docker-grav.git (fetch)
+origin	https://github.com/bozzochet/docker-grav.git (push)
+original	https://github.com/getgrav/docker-grav.git (fetch)
+original	https://github.com/getgrav/docker-grav.git (push)
+
+ed il default è quello mio
+
+bozzo@MacBook-Pro:grav> git branch -vv
+* * master 9778736 [origin/master] up
+
+bozzo@MacBook-Pro:docker-grav> git status -sb
+## master...origin/master
+M  Dockerfile
+M  README.md
+?? LEGGIMI
+?? LEGGIMI~
+
+quando faccio il pull
+
+git pull
+
+pesco dal default (origin/master) ma posso scegliere di aggiornare anche rispetto a quello da cui ho forkato
+
+
+git pull original master
+
+dove devo specificare ESPLICITAMENTE:
+- il remote: original (invece che origin)
+- il branch: master

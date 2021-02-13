@@ -2,10 +2,11 @@
 
 I just took the official one and I substituted the `curl` command downloading Grav with a `git clone` (from https://github.com/bozzochet/grav) that download my entire website.
 
-Then a simple call to a bash script (install.sh) deploy it completely.
-I also add two crontab entries
+Then a simple call to a bash script (`install.sh`) deploy it completely.
+
+I also added two crontab entries
 * to pull from git every hour to update the website content
-* to run a script (install_plugins.sh) every night to add new plugins added to the script (and updated by the pull from github half an hours earlier or in any previous hourly update)
+* to run a script (`install_plugins.sh`) every night to add new plugins added to the script (and updated by the pull from github half an hours earlier or in any previous hourly update)
 
 The website is not planned to have 'persistency' so the comments below are not relevant (I kept just for inventory benefit). Once built (as described below or by simply downloading the image from DockerHub, https://hub.docker.com/r/bozzochet/docker-grav) I simply run with
 

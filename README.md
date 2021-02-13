@@ -14,7 +14,13 @@ The website is not planned to have 'persistency' so the comments below are not r
 docker run -d -p 8000:80 grav:latest
 ```
 
-and the process runs in background.
+or
+
+```
+docker run -d -p 8000:80 bozzochet/docker-grav:latest
+```
+
+(after pulling from DockerHub with `docker pull bozzochet/docker-grav`) and the process runs in background.
 
 I can connect to it by:
 

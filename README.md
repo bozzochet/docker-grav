@@ -14,7 +14,9 @@ The website is not planned to have 'persistency' so the comments below are not r
 docker run -d -p 8000:80 grav:latest
 ```
 
-and the process runs in background. I can connect to it by:
+and the process runs in background.
+
+I can connect to it by:
 
 ```
 docker exec -it --user root <contained ID> /bin/bash

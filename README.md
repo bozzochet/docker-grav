@@ -1,6 +1,7 @@
 # Customized (by bozzochet) version of Official Docker Image for Grav
 
 I just took the official one and I substituted the `curl` command downloading Grav with a `git clone` (from https://github.com/bozzochet/grav) that download my entire website.
+
 Then a simple call to a bash script (install.sh) deploy it completely.
 I also add two crontab entries
 * to pull from git every hour to update the website content

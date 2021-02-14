@@ -68,8 +68,11 @@ RUN git clone https://github.com/bozzochet/grav.git && \
 # Create cron job for Grav maintenance scripts
 RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav scheduler 1>> /dev/null 2>&1") | crontab -
 
-# Create cron job to update the Grav plugins (every night at 02:30)
+# Create cron job to update the Grav plugins
+# (every night at 02:30, to add,
+# and at 02:45, to remove [if one package is kept in both places is hoowever removed for safety, for example the Admin one])
 RUN (crontab -l; echo "30 2 * * * cd /var/www/html;./install_plugins.sh 1>> /dev/null 2>&1") | crontab -
+RUN (crontab -l; echo "45 2 * * * cd /var/www/html;./remove_plugins.sh 1>> /dev/null 2>&1") | crontab -
 
 # Create cron job to update Grav github repo (i.e. web site content) every hour.
 # In case the list of plugins is changed (install_plugins.sh) it will be updated at 02:30 (half-hour after this cron)

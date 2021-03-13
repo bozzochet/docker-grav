@@ -1,6 +1,6 @@
 # Customized (by bozzochet) version of Official Docker Image for Grav
 
-I just took the official one and I substituted the `curl` command downloading Grav with a `git clone` (from https://github.com/bozzochet/herd-grav) that download my entire website.
+I just took the official one and I substituted the `curl` command downloading Grav with a `git clone` (from https://github.com/bozzochet/grav) that download my entire website.
 
 Then a simple call to a bash script (`install.sh`) deploy it completely.
 

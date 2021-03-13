@@ -60,7 +60,7 @@ WORKDIR /var/www
 #    unzip grav-admin.zip && \
 #    mv -T /var/www/grav-admin /var/www/html && \
 #    rm grav-admin.zip
-RUN git clone https://github.com/bozzochet/grav.git && \
+RUN git clone https://github.com/bozzochet/herd-grav.git && \
     mv -T /var/www/grav /var/www/html && \
     cd html && \
     ./install.sh

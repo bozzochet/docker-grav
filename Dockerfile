@@ -6,11 +6,12 @@ RUN a2enmod rewrite expires && \
     sed -i 's/ServerTokens OS/ServerTokens ProductOnly/g' \
     /etc/apache2/conf-available/security.conf
 
-# (MD) Enable only secure ciphers:
-RUN sed -i 's|SSLCipherSuite HIGH:!aNULL|SSLCipherSuite HIGH:!aNULL:!eNULL:!EXPORT:!3DES:!DES:!MD5:!PSK:!RC4|' /etc/apache2/mods-available/ssl.conf
-RUN sed -i 's|#SSLHonorCipherOrder on|SSLHonorCipherOrder on|' /etc/apache2/mods-available/ssl.conf
-RUN sed -i 's|SSLProtocol all -SSLv3|SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1\n\tSSLCompression off\n\tSSLSessionTickets off|' /etc/apache2/mods-available/ssl.conf
-RUN a2enmod ssl
+# Needed only if exiting https but is better to do with a docker-compose and the traefic proxy in front
+## (MD) Enable only secure ciphers:
+#RUN sed -i 's|SSLCipherSuite HIGH:!aNULL|SSLCipherSuite HIGH:!aNULL:!eNULL:!EXPORT:!3DES:!DES:!MD5:!PSK:!RC4|' /etc/apache2/mods-available/ssl.conf
+#RUN sed -i 's|#SSLHonorCipherOrder on|SSLHonorCipherOrder on|' /etc/apache2/mods-available/ssl.conf
+#RUN sed -i 's|SSLProtocol all -SSLv3|SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1\n\tSSLCompression off\n\tSSLSessionTickets off|' /etc/apache2/mods-available/ssl.conf
+#RUN a2enmod ssl
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
